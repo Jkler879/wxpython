@@ -1,0 +1,22 @@
+import wx
+
+
+# app = wx.App(False) #每一个 wxPython 应用程序都是一个 wx.App 实例,直接实例化 wx.App,False” 参数意味着“不要把 stdout 和 stderr 信息重定向到窗口”
+# frame = wx.Frame(None, wx.ID_ANY, "Hello, World!")  #完整的语法是 x.Frame(Parent, Id, Title), 这是一个顶层的window,wx.ID_ANY” 让 wxWidgets 来给我们挑选一个ID
+# frame.Show(True)    #显示这个frame
+# app.MainLoop() # 运行这个应用程序
+
+
+app = wx.App()
+window = wx.Frame(None, title="wxPython Frame", size=(300,200))  # title标题， size大小参数
+panel = wx.Panel(window) # 尽管可以在Frame对象中添加其他控件，但它们的布局不能管理,因此，将一个Panel对象放入框架中
+label = wx.StaticText(panel, label = "Hello World", pos = (100,50)) # StaticText对象以在窗口内的所需位置
+window.Show(True)
+app.MainLoop()
+
+"""
+wxFrame对象 是最常用的顶层窗口
+它来自 wxWindow类 一个框架是一个窗口，其大小和位置可以由用户改变它有一个标题栏和控制按钮
+如果需要，可以启用其他组件，如菜单栏，工具栏和状态栏
+一个wxFrame窗口可以包含任何不是对话框或其他框架的框架
+"""
